@@ -1,0 +1,1634 @@
+{
+	"variables": [],
+	"info": {
+		"name": "CRM Api",
+		"_postman_id": "be883554-9cbb-00ce-6407-4859c425c8ec",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"description": "",
+			"item": [
+				{
+					"name": "Users sorting, filtering, etc",
+					"request": {
+						"url": {
+							"raw": "http://localhost:8080/api/v1/users?token={{auth_token}}&limit=10&page=0&sort[0][direction]=DESC&sort[0][key]=name&includes[]=roles&filter_groups[0][or]=true&filter_groups[0][filters][0][key]=name&filter_groups[0][filters][0][value]=ad&filter_groups[0][filters][0][operator]=sw&filter_groups[0][filters][1][key]=name&filter_groups[0][filters][1][value]=_1&filter_groups[0][filters][1][operator]=ew",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"users"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "limit",
+									"value": "10",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "page",
+									"value": "0",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "sort[0][direction]",
+									"value": "DESC",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "sort[0][key]",
+									"value": "name",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "includes[]",
+									"value": "roles",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "filter_groups[0][or]",
+									"value": "true",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "filter_groups[0][filters][0][key]",
+									"value": "name",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "filter_groups[0][filters][0][value]",
+									"value": "ad",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "filter_groups[0][filters][0][operator]",
+									"value": "sw",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "filter_groups[0][filters][1][key]",
+									"value": "name",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "filter_groups[0][filters][1][value]",
+									"value": "_1",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "filter_groups[0][filters][1][operator]",
+									"value": "ew",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get user",
+					"request": {
+						"url": {
+							"raw": "http://localhost:8080/api/v1/users/2?token={{auth_token}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"2"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Create user",
+					"request": {
+						"url": {
+							"raw": "http://localhost:8080/api/v1/users?token={{auth_token}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"users"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "user_6",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "user_6@test.test",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "qaz!@#",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "active",
+									"value": "1",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "roles[]",
+									"value": "user",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Update user",
+					"request": {
+						"url": {
+							"raw": "http://localhost:8080/api/v1/users/2?token={{auth_token}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"2"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "user_5",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "user_5@test.test",
+									"description": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "active",
+									"value": "1",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "roles[]",
+									"value": "owner",
+									"description": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "roles[]",
+									"value": "user",
+									"description": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Delete user",
+					"request": {
+						"url": {
+							"raw": "http://localhost:8080/api/v1/users/2?token={{auth_token}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"2"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept-Encoding",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Clients",
+			"description": "",
+			"item": [
+				{
+					"name": "Clients sorting, filtering, etc",
+					"request": {
+						"url": {
+							"raw": "http://localhost:8080/api/v1/clients?token={{auth_token}}&includes[]=labels&includes[]=meetings",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"clients"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "limit",
+									"value": "10",
+									"equals": true,
+									"description": "",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "0",
+									"equals": true,
+									"description": "",
+									"disabled": true
+								},
+								{
+									"key": "sort[0][key]",
+									"value": "name",
+									"equals": true,
+									"description": "",
+									"disabled": true
+								},
+								{
+									"key": "sort[0][direction]",
+									"value": "DESC",
+									"equals": true,
+									"description": "",
+									"disabled": true
+								},
+								{
+									"key": "includes[]",
+									"value": "labels",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "includes[]",
+									"value": "meetings",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "filter_groups[0][or]",
+									"value": "true",
+									"equals": true,
+									"description": "",
+									"disabled": true
+								},
+								{
+									"key": "filter_groups[0][filters][0][key]",
+									"value": "name",
+									"equals": true,
+									"description": "",
+									"disabled": true
+								},
+								{
+									"key": "filter_groups[0][filters][0][value]",
+									"value": "cl",
+									"equals": true,
+									"description": "",
+									"disabled": true
+								},
+								{
+									"key": "filter_groups[0][filters][0][operator]",
+									"value": "sw",
+									"equals": true,
+									"description": "",
+									"disabled": true
+								},
+								{
+									"key": "filter_groups[0][filters][1][key]",
+									"value": "name",
+									"equals": true,
+									"description": "",
+									"disabled": true
+								},
+								{
+									"key": "filter_groups[0][filters][1][value]",
+									"value": "_1",
+									"equals": true,
+									"description": "",
+									"disabled": true
+								},
+								{
+									"key": "filter_groups[0][filters][1][operator]",
+									"value": "ew",
+									"equals": true,
+									"description": "",
+									"disabled": true
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Create client",
+					"request": {
+						"url": {
+							"raw": "http://localhost:8080/api/v1/clients?token={{auth_token}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"clients"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "client_1",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "client_1@test.test",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "company",
+									"value": "company_1",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "11-11-11",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "comment",
+									"value": "comment_1",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "new-labels[0][name]",
+									"value": "label_1",
+									"description": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "new-labels[0][color]",
+									"value": "#000000",
+									"description": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "labels[]",
+									"value": "1",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Update client",
+					"request": {
+						"url": {
+							"raw": "http://localhost:8080/api/v1/clients/1?token={{auth_token}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"clients",
+								"1"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "client_1",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "client_1@test.test",
+									"description": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "company",
+									"value": "company_1",
+									"description": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "phone",
+									"value": "11-11-11",
+									"description": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "comment",
+									"value": "comment_1",
+									"description": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "labels[]",
+									"value": "2",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "labels[]",
+									"value": "3",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "new-labels[0][name]",
+									"value": "label_3",
+									"description": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "new-labels[0][color]",
+									"value": "#222222",
+									"description": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get client labels",
+					"request": {
+						"url": {
+							"raw": "http://localhost:8080/api/v1/clients/1/labels?token={{auth_token}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"clients",
+								"1",
+								"labels"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Update client labels",
+					"request": {
+						"url": {
+							"raw": "http://localhost:8080/api/v1/clients/1/labels?token={{auth_token}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"clients",
+								"1",
+								"labels"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "labels[]",
+									"value": "2",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "new-labels[0][name]",
+									"value": "label_2",
+									"description": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "new-labels[0][color]",
+									"value": "#111111",
+									"description": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get client meetings",
+					"request": {
+						"url": {
+							"raw": "http://localhost:8080/api/v1/clients/1/meetings?token={{auth_token}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"clients",
+								"1",
+								"meetings"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Create meetings for client",
+					"request": {
+						"url": {
+							"raw": "http://localhost:8080/api/v1/clients/1/meetings?token={{auth_token}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"clients",
+								"1",
+								"meetings"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "meetings[]",
+									"value": "2017-09-04 12:50:00",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Delete client",
+					"request": {
+						"url": {
+							"raw": "http://localhost:8080/api/v1/clients/2?token={{auth_token}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"clients",
+								"2"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get future meetings for client",
+					"request": {
+						"url": {
+							"raw": "http://localhost:8080/api/v1/clients/1/future-meetings?token={{auth_token}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"clients",
+								"1",
+								"future-meetings"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Labels",
+			"description": "",
+			"item": [
+				{
+					"name": "Labels sorting, filtering, etc",
+					"request": {
+						"url": {
+							"raw": "http://localhost:8080/api/v1/labels?token={{auth_token}}&includes[]=clients",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"labels"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "limit",
+									"value": "10",
+									"equals": true,
+									"description": "",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "0",
+									"equals": true,
+									"description": "",
+									"disabled": true
+								},
+								{
+									"key": "sort[0][direction]",
+									"value": "DESC",
+									"equals": true,
+									"description": "",
+									"disabled": true
+								},
+								{
+									"key": "sort[0][key]",
+									"value": "name",
+									"equals": true,
+									"description": "",
+									"disabled": true
+								},
+								{
+									"key": "includes[]",
+									"value": "clients",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "filter_groups[0][or]",
+									"value": "true",
+									"equals": true,
+									"description": "",
+									"disabled": true
+								},
+								{
+									"key": "filter_groups[0][filters][0][key]",
+									"value": "name",
+									"equals": true,
+									"description": "",
+									"disabled": true
+								},
+								{
+									"key": "filter_groups[0][filters][0][value]",
+									"value": "cl",
+									"equals": true,
+									"description": "",
+									"disabled": true
+								},
+								{
+									"key": "filter_groups[0][filters][0][operator]",
+									"value": "sw",
+									"equals": true,
+									"description": "",
+									"disabled": true
+								},
+								{
+									"key": "filter_groups[0][filters][1][key]",
+									"value": "name",
+									"equals": true,
+									"description": "",
+									"disabled": true
+								},
+								{
+									"key": "filter_groups[0][filters][1][value]",
+									"value": "_1",
+									"equals": true,
+									"description": "",
+									"disabled": true
+								},
+								{
+									"key": "filter_groups[0][filters][1][operator]",
+									"value": "ew",
+									"equals": true,
+									"description": "",
+									"disabled": true
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Create label",
+					"request": {
+						"url": {
+							"raw": "http://localhost:8080/api/v1/labels?token={{auth_token}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"labels"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "label_7",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "color",
+									"value": "#333333",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Label update",
+					"request": {
+						"url": {
+							"raw": "http://localhost:8080/api/v1/labels/4?token={{auth_token}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"labels",
+								"4"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "label_7",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "color",
+									"value": "#AAAAAA",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Delete label",
+					"request": {
+						"url": {
+							"raw": "http://localhost:8080/api/v1/labels/4?token={{auth_token}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"labels",
+								"4"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Meetings",
+			"description": "",
+			"item": [
+				{
+					"name": "Meetings sorting, filtering, etc",
+					"request": {
+						"url": {
+							"raw": "http://localhost:8080/api/v1/meetings?token={{auth_token}}&sort[0][key]=planned_for&sort[0][direction]=DESC&filter_groups[0][filters][1][key]=client_id&filter_groups[0][filters][1][value]=2&filter_groups[0][filters][1][operator]=eq",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"meetings"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "sort[0][key]",
+									"value": "planned_for",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "sort[0][direction]",
+									"value": "DESC",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "filter_groups[0][filters][0][key]",
+									"value": "planned_for",
+									"equals": true,
+									"description": "",
+									"disabled": true
+								},
+								{
+									"key": "filter_groups[0][filters][0][value]",
+									"value": "2017-09-04 12:50:00",
+									"equals": true,
+									"description": "",
+									"disabled": true
+								},
+								{
+									"key": "filter_groups[0][filters][0][operator]",
+									"value": "gt",
+									"equals": true,
+									"description": "",
+									"disabled": true
+								},
+								{
+									"key": "filter_groups[0][filters][1][key]",
+									"value": "client_id",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "filter_groups[0][filters][1][value]",
+									"value": "2",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "filter_groups[0][filters][1][operator]",
+									"value": "eq",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get meeting",
+					"request": {
+						"url": {
+							"raw": "http://localhost:8080/api/v1/meetings/1?token={{auth_token}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"meetings",
+								"1"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Create meeting",
+					"request": {
+						"url": {
+							"raw": "http://localhost:8080/api/v1/meetings?token={{auth_token}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"meetings"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "client_id",
+									"value": "1",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "planned_for",
+									"value": "2017-09-05 03:20:16",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Meeting update",
+					"request": {
+						"url": {
+							"raw": "http://localhost:8080/api/v1/meetings/1?token={{auth_token}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"meetings",
+								"1"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "planned_for",
+									"value": "2017-09-04 08:20:16",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Delete meeting",
+					"request": {
+						"url": {
+							"raw": "http://localhost:8080/api/v1/meetings/1?token={{auth_token}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"meetings",
+								"1"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get future meetings",
+					"request": {
+						"url": {
+							"raw": "http://localhost:8080/api/v1/meetings/future-meetings?token={{auth_token}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"meetings",
+								"future-meetings"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Authentication",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = pm.response.json();",
+							"pm.globals.set(\"auth_token\", jsonData.token);",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/api/v1/auth",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "admin@test.test",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "qaz!@#",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
